@@ -1,0 +1,81 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux16.hdl
+/**
+ * 16-bit multiplexor: 
+ * for i = 0, ..., 15:
+ * if (sel = 0) out[i] = a[i], else out[i] = b[i]
+ */
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    //// Replace this comment with your code.
+    Not(in= sel, out=selNot );
+    And(a= a[0], b=selNot , out=aAndselNot0 );
+    And(a= b[0], b= sel, out=bAndsel0 );
+    Or(a= bAndsel0, b= aAndselNot0, out= out[0]);
+
+    And(a= a[1], b=selNot , out=aAndselNot1 );
+    And(a= b[1], b= sel, out=bAndsel1 );
+    Or(a= bAndsel1, b= aAndselNot1, out= out[1]);
+
+    And(a= a[2], b=selNot , out=aAndselNot2 );
+    And(a= b[2], b= sel, out=bAndsel2 );
+    Or(a= bAndsel2, b= aAndselNot2, out= out[2]);
+
+    And(a= a[3], b=selNot , out=aAndselNot3 );
+    And(a= b[3], b= sel, out=bAndsel3 );
+    Or(a= bAndsel3, b= aAndselNot3, out= out[3]);
+
+    And(a= a[4], b=selNot , out=aAndselNot4 );
+    And(a= b[4], b= sel, out=bAndsel4 );
+    Or(a= bAndsel4, b= aAndselNot4, out= out[4]);
+
+    And(a= a[5], b=selNot , out=aAndselNot5 );
+    And(a= b[5], b= sel, out=bAndsel5 );
+    Or(a= bAndsel5, b= aAndselNot5, out= out[5]);
+
+    And(a= a[6], b=selNot , out=aAndselNot6 );
+    And(a= b[6], b= sel, out=bAndsel6 );
+    Or(a= bAndsel6, b= aAndselNot6, out= out[6]);
+
+    And(a= a[7], b=selNot , out=aAndselNot7 );
+    And(a= b[7], b= sel, out=bAndsel7 );
+    Or(a= bAndsel7, b= aAndselNot7, out= out[7]);
+
+    And(a= a[8], b=selNot , out=aAndselNot8 );
+    And(a= b[8], b= sel, out=bAndsel8 );
+    Or(a= bAndsel8, b= aAndselNot8, out= out[8]);
+
+    And(a= a[9], b=selNot , out=aAndselNot9 );
+    And(a= b[9], b= sel, out=bAndsel9 );
+    Or(a= bAndsel9, b= aAndselNot9, out= out[9]);
+
+    And(a= a[10], b=selNot , out=aAndselNot10 );
+    And(a= b[10], b= sel, out=bAndsel10 );
+    Or(a= bAndsel10, b= aAndselNot10, out= out[10]);
+
+    And(a= a[11], b=selNot , out=aAndselNot11 );
+    And(a= b[11], b= sel, out=bAndsel11 );
+    Or(a= bAndsel11, b= aAndselNot11, out= out[11]);
+
+    And(a= a[12], b=selNot , out=aAndselNot12 );
+    And(a= b[12], b= sel, out=bAndsel12 );
+    Or(a= bAndsel12, b= aAndselNot12, out= out[12]);
+
+    And(a= a[13], b=selNot , out=aAndselNot13 );
+    And(a= b[13], b= sel, out=bAndsel13 );
+    Or(a= bAndsel13, b= aAndselNot13, out= out[13]);
+
+    And(a= a[14], b=selNot , out=aAndselNot14 );
+    And(a= b[14], b= sel, out=bAndsel14 );
+    Or(a= bAndsel14, b= aAndselNot14, out= out[14]);
+
+    And(a= a[15], b=selNot , out=aAndselNot15 );
+    And(a= b[15], b= sel, out=bAndsel15 );
+    Or(a= bAndsel15, b= aAndselNot15, out= out[15]);
+
+}
