@@ -9,7 +9,7 @@
 CHIP Inc16 {
     IN in[16];
     OUT out[16];
-
+   
     PARTS:
     //// Replace this comment with your code.
     HalfAdder(a=in[0], b=true, sum=out[0], carry=carry1);
